@@ -12,8 +12,17 @@ public class LeapYearCheck {
     }
 
 
-    static int isLeapYear(num){
-        if(num%4 == 0 )
+    static boolean isLeapYear (int num){
+    boolean isLeapYear = false;
+    switch (num){
+        case (num < 100 && (num % 4 == 0)): isLeapYear = true;
+             break;
+        case (num % 4 == 0):
+        case (num % 100 == 0 && num % 400 == 0): isLeapYear = true;
+             break;
+        case (num % 100 == 0 && num % 400 != 0): isLeapYear = false;
+        break;
     }
-
+        return isLeapYear;
+}
 }
